@@ -1,9 +1,9 @@
 function show(enabled, useSettingsInsteadOfPreferences) {
     if (useSettingsInsteadOfPreferences) {
-        document.getElementsByClassName('state-on')[0].innerText = "Eklenti etkin. Safari araç çubuğundaki simgeden siteleri yönetebilirsiniz.";
-        document.getElementsByClassName('state-off')[0].innerText = "Safari Ayarları → Eklentiler bölümünden LumaShade’i etkinleştirin.";
-        document.getElementsByClassName('state-unknown')[0].innerText = "Safari Ayarları → Eklentiler bölümünden LumaShade’i etkinleştirin.";
-        document.getElementsByClassName('open-preferences')[0].innerText = "Safari Eklenti Ayarlarını Aç";
+        document.getElementsByClassName('state-on')[0].innerText = "The extension is on. Manage websites from its Safari toolbar icon.";
+        document.getElementsByClassName('state-off')[0].innerText = "Enable LumaShade in Safari Settings → Extensions.";
+        document.getElementsByClassName('state-unknown')[0].innerText = "Enable LumaShade in Safari Settings → Extensions.";
+        document.getElementsByClassName('open-preferences')[0].innerText = "Open Safari Extension Settings";
     }
 
     if (typeof enabled === "boolean") {

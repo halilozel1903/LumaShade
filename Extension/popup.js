@@ -10,14 +10,14 @@
   const settings = await api.storage.local.get({ enabled: true, sites: {} });
   globalToggle.checked = settings.enabled !== false;
   siteToggle.checked = settings.sites[host] !== false;
-  hostname.textContent = host || "Bu sayfada kullanılamıyor";
+  hostname.textContent = host || "Unavailable on this page";
   siteToggle.disabled = !host;
   const updateStatus = async () => {
-    if (!host) { status.textContent = "Safari iç sayfalarında eklentiler çalışmaz."; return; }
+    if (!host) { status.textContent = "Extensions cannot run on Safari's internal pages."; return; }
     try {
       const info = await api.tabs.sendMessage(tab.id, { type: "lumashade:status" });
-      status.textContent = info.nativeDark ? "Bu site zaten koyu görünüyor; değiştirilmedi." : (!globalToggle.checked || !siteToggle.checked ? "Bu sitede kapalı." : "Bu sitede etkin.");
-    } catch { status.textContent = "Bu sayfayı yenileyerek LumaShade’i başlatın."; }
+      status.textContent = info.nativeDark ? "This site is already dark, so it was left unchanged." : (!globalToggle.checked || !siteToggle.checked ? "Turned off for this site." : "Active on this site.");
+    } catch { status.textContent = "Refresh this page to start LumaShade."; }
   };
   globalToggle.addEventListener("change", async () => { await api.storage.local.set({ enabled: globalToggle.checked }); updateStatus(); });
   siteToggle.addEventListener("change", async () => {
