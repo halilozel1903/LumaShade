@@ -1,3 +1,12 @@
+:root:not([data-lumashade-ready])::before {
+  content: "" !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+  background: #141922 !important;
+  pointer-events: none !important;
+}
+
 :root[data-lumashade-active] input::placeholder,
 :root[data-lumashade-active] textarea::placeholder {
   color: #b2bac9 !important;

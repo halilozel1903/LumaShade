@@ -42,6 +42,15 @@
     const text = C.parse(getComputedStyle(document.body || document.documentElement).color);
     return C.luminance(root) < .16 && (!text || C.contrast(text, root) >= 4.5);
   }
+  function isSmallAccent(element, computed, color) {
+    const box = element.getBoundingClientRect();
+    if (!box.width || !box.height || box.width > 16 || box.height > 16 || Math.abs(box.width - box.height) > 3) return false;
+    if (element.textContent.trim() || element.children.length) return false;
+    const radius = computed.borderTopLeftRadius;
+    const round = radius.includes("%") ? parseFloat(radius) >= 35 : parseFloat(radius) >= box.width * .35;
+    const spread = Math.max(color.r, color.g, color.b) - Math.min(color.r, color.g, color.b);
+    return round && spread >= 28;
+  }
   function paintVector(svg) {
     const box = svg.getBoundingClientRect();
     if (!box.width || !box.height || box.width > 440 || box.height > 140 || box.width * box.height > 40000) return;
@@ -83,7 +92,10 @@
     let target = inherited;
     if (own && own.a > .01) {
       const source = own.a < 1 ? C.blend(own, inherited) : own;
-      if (C.luminance(source) > .18) {
+      if (isSmallAccent(element, computed, source)) {
+        target = inherited;
+        if (C.contrast(source, inherited) < 6) set(element, "background-color", C.css(C.readableForeground(source, inherited, 6)));
+      } else if (C.luminance(source) > .18) {
         target = C.darkBackground(source);
         set(element, "background-color", C.css(target));
       } else target = source;
@@ -112,6 +124,7 @@
     }
     pending.clear();
     observe();
+    document.documentElement.setAttribute("data-lumashade-ready", "");
   }
   function schedule(root) {
     if (!active || !(root instanceof Element)) return;
@@ -132,6 +145,7 @@
     const shouldEnable = settings.enabled !== false && siteEnabled() && !siteIsDark;
     if (shouldEnable && !active) {
       active = true;
+      document.documentElement.removeAttribute("data-lumashade-ready");
       document.documentElement.setAttribute("data-lumashade-active", "");
       schedule(document.documentElement);
     } else if (!shouldEnable && active) {
@@ -140,13 +154,16 @@
       pending.clear();
       restore();
       document.documentElement.removeAttribute("data-lumashade-active");
+      document.documentElement.setAttribute("data-lumashade-ready", "");
+    } else if (!shouldEnable) {
+      document.documentElement.setAttribute("data-lumashade-ready", "");
     }
   }
   api.storage.local.get({ enabled: true, sites: {} }).then(value => {
     settings = value;
     siteIsDark = detectDark();
     apply();
-  });
+  }).catch(() => document.documentElement.setAttribute("data-lumashade-ready", ""));
   api.storage.onChanged.addListener((changes, area) => {
     if (area !== "local") return;
     if (changes.enabled) settings.enabled = changes.enabled.newValue;

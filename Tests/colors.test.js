@@ -32,3 +32,9 @@ test('only single-color vectors are eligible for recoloring', () => {
   assert.equal(C.isSingleColor([C.parse('rgb(20, 20, 20)'), C.parse('rgb(50, 140, 240)')]), false);
   assert.equal(C.isSingleColor([]), false);
 });
+
+test('small colored status markers can reach stronger contrast', () => {
+  const background = {r: 20, g: 25, b: 34};
+  const marker = C.readableForeground(C.parse('rgb(26, 137, 23)'), background, 6);
+  assert.ok(C.contrast(marker, background) >= 6);
+});

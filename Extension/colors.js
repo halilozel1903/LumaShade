@@ -23,15 +23,15 @@
     const base = 20 + (1 - luminance(c)) * 32;
     return { r: Math.max(12, base + (c.r - mean) * .08), g: Math.max(12, base + 5 + (c.g - mean) * .08), b: Math.max(12, base + 14 + (c.b - mean) * .08), a: 1 };
   }
-  function readableForeground(c, background) {
+  function readableForeground(c, background, minimumContrast = 4.5) {
     const spread = Math.max(c.r, c.g, c.b) - Math.min(c.r, c.g, c.b);
     let result = spread < 38 && luminance(c) < .35 ? { r: 228, g: 232, b: 240, a: 1 } : { ...c, a: 1 };
-    if (contrast(result, background) >= 4.5) return result;
+    if (contrast(result, background) >= minimumContrast) return result;
     const white = { r: 250, g: 251, b: 255, a: 1 };
     for (let step = 1; step <= 100; step++) {
       const t = step / 100;
       const candidate = { r: result.r * (1 - t) + white.r * t, g: result.g * (1 - t) + white.g * t, b: result.b * (1 - t) + white.b * t, a: 1 };
-      if (contrast(candidate, background) >= 4.5) return candidate;
+      if (contrast(candidate, background) >= minimumContrast) return candidate;
     }
     return white;
   }
