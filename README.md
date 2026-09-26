@@ -1,5 +1,7 @@
 # LumaShade
 
+[Project website](https://halilozel1903.github.io/LumaShade/) · [Source code](https://github.com/halilozel1903/LumaShade)
+
 A calm, readable dark mode for Safari. LumaShade darkens bright websites and adjusts text and links for contrast. It leaves photos, videos, canvas, and embedded content untouched, and steps aside when a website already has a dark theme.
 
 ![LumaShade preview](Screenshots/after.png)
