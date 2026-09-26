@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2935E2DE306841D7005AEC75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935E2DD306841D7005AEC75 /* AppDelegate.swift */; };
+		2935E2E2306841D7005AEC75 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 2935E2E0306841D7005AEC75 /* Main.html */; };
+		2935E2E4306841D7005AEC75 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2935E2E3306841D7005AEC75 /* Icon.png */; };
+		2935E2E6306841D7005AEC75 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 2935E2E5306841D7005AEC75 /* Style.css */; };
+		2935E2E8306841D7005AEC75 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 2935E2E7306841D7005AEC75 /* Script.js */; };
+		2935E2EA306841D7005AEC75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935E2E9306841D7005AEC75 /* ViewController.swift */; };
+		2935E2ED306841D7005AEC75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2935E2EB306841D7005AEC75 /* Main.storyboard */; };
+		2935E2EF306841D8005AEC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2935E2EE306841D8005AEC75 /* Assets.xcassets */; };
+		2935E2F6306841D9005AEC75 /* LumaShade Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2935E2F5306841D9005AEC75 /* LumaShade Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2935E2FB306841D9005AEC75 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2935E2FA306841D9005AEC75 /* SafariWebExtensionHandler.swift */; };
+		2935E30E306841D9005AEC75 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 2935E307306841D9005AEC75 /* popup.js */; };
+		2935E30F306841D9005AEC75 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 2935E308306841D9005AEC75 /* popup.html */; };
+		2935E310306841D9005AEC75 /* colors.js in Resources */ = {isa = PBXBuildFile; fileRef = 2935E309306841D9005AEC75 /* colors.js */; };
+		2935E311306841D9005AEC75 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 2935E30A306841D9005AEC75 /* icons */; };
+		2935E312306841D9005AEC75 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 2935E30B306841D9005AEC75 /* manifest.json */; };
+		2935E313306841D9005AEC75 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 2935E30C306841D9005AEC75 /* popup.css */; };
+		2935E314306841D9005AEC75 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 2935E30D306841D9005AEC75 /* content.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2935E2F7306841D9005AEC75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2935E2D2306841D7005AEC75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2935E2F4306841D9005AEC75;
+			remoteInfo = "LumaShade Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2935E302306841D9005AEC75 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = PlugIns;
+			files = (
+				2935E2F6306841D9005AEC75 /* LumaShade Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2935E2DA306841D7005AEC75 /* LumaShade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LumaShade.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2935E2DD306841D7005AEC75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2935E2E1306841D7005AEC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		2935E2E3306841D7005AEC75 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		2935E2E5306841D7005AEC75 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		2935E2E7306841D7005AEC75 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		2935E2E9306841D7005AEC75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2935E2EC306841D7005AEC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2935E2EE306841D8005AEC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2935E2F0306841D8005AEC75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2935E2F5306841D9005AEC75 /* LumaShade Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LumaShade Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2935E2FA306841D9005AEC75 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		2935E2FC306841D9005AEC75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2935E307306841D9005AEC75 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../Extension/popup.js; sourceTree = "<group>"; };
+		2935E308306841D9005AEC75 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../Extension/popup.html; sourceTree = "<group>"; };
+		2935E309306841D9005AEC75 /* colors.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = colors.js; path = ../../Extension/colors.js; sourceTree = "<group>"; };
+		2935E30A306841D9005AEC75 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../Extension/icons; sourceTree = "<group>"; };
+		2935E30B306841D9005AEC75 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../Extension/manifest.json; sourceTree = "<group>"; };
+		2935E30C306841D9005AEC75 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = popup.css; path = ../../Extension/popup.css; sourceTree = "<group>"; };
+		2935E30D306841D9005AEC75 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = content.js; path = ../../Extension/content.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2935E2D7306841D7005AEC75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		2935E2F2306841D9005AEC75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2935E2D1306841D7005AEC75 = {
+			isa = PBXGroup;
+			children = (
+				2935E2DC306841D7005AEC75 /* LumaShade */,
+				2935E2F9306841D9005AEC75 /* LumaShade Extension */,
+				2935E2DB306841D7005AEC75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2935E2DB306841D7005AEC75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2935E2DA306841D7005AEC75 /* LumaShade.app */,
+				2935E2F5306841D9005AEC75 /* LumaShade Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2935E2DC306841D7005AEC75 /* LumaShade */ = {
+			isa = PBXGroup;
+			children = (
+				2935E2DD306841D7005AEC75 /* AppDelegate.swift */,
+				2935E2E9306841D7005AEC75 /* ViewController.swift */,
+				2935E2EB306841D7005AEC75 /* Main.storyboard */,
+				2935E2EE306841D8005AEC75 /* Assets.xcassets */,
+				2935E2F0306841D8005AEC75 /* Info.plist */,
+				2935E2DF306841D7005AEC75 /* Resources */,
+			);
+			path = LumaShade;
+			sourceTree = "<group>";
+		};
+		2935E2DF306841D7005AEC75 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2935E2E0306841D7005AEC75 /* Main.html */,
+				2935E2E3306841D7005AEC75 /* Icon.png */,
+				2935E2E5306841D7005AEC75 /* Style.css */,
+				2935E2E7306841D7005AEC75 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2935E2F9306841D9005AEC75 /* LumaShade Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2935E306306841D9005AEC75 /* Resources */,
+				2935E2FA306841D9005AEC75 /* SafariWebExtensionHandler.swift */,
+				2935E2FC306841D9005AEC75 /* Info.plist */,
+			);
+			path = "LumaShade Extension";
+			sourceTree = "<group>";
+		};
+		2935E306306841D9005AEC75 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2935E307306841D9005AEC75 /* popup.js */,
+				2935E308306841D9005AEC75 /* popup.html */,
+				2935E309306841D9005AEC75 /* colors.js */,
+				2935E30A306841D9005AEC75 /* icons */,
+				2935E30B306841D9005AEC75 /* manifest.json */,
+				2935E30C306841D9005AEC75 /* popup.css */,
+				2935E30D306841D9005AEC75 /* content.js */,
+			);
+			name = Resources;
+			path = "LumaShade Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2935E2D9306841D7005AEC75 /* LumaShade */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2935E303306841D9005AEC75 /* Build configuration list for PBXNativeTarget "LumaShade" */;
+			buildPhases = (
+				2935E2D6306841D7005AEC75 /* Sources */,
+				2935E2D7306841D7005AEC75 /* Frameworks */,
+				2935E2D8306841D7005AEC75 /* Resources */,
+				2935E302306841D9005AEC75 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2935E2F8306841D9005AEC75 /* PBXTargetDependency */,
+			);
+			name = LumaShade;
+			productName = LumaShade;
+			productReference = 2935E2DA306841D7005AEC75 /* LumaShade.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2935E2F4306841D9005AEC75 /* LumaShade Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2935E2FF306841D9005AEC75 /* Build configuration list for PBXNativeTarget "LumaShade Extension" */;
+			buildPhases = (
+				2935E2F1306841D9005AEC75 /* Sources */,
+				2935E2F2306841D9005AEC75 /* Frameworks */,
+				2935E2F3306841D9005AEC75 /* Resources */,
+			);
+			buildRules = (
+			);
+			name = "LumaShade Extension";
+			productName = "LumaShade Extension";
+			productReference = 2935E2F5306841D9005AEC75 /* LumaShade Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2935E2D2306841D7005AEC75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					2935E2D9306841D7005AEC75 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					2935E2F4306841D9005AEC75 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+				};
+			};
+			buildConfigurationList = 2935E2D5306841D7005AEC75 /* Build configuration list for PBXProject "LumaShade" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2935E2D1306841D7005AEC75;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2935E2DB306841D7005AEC75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2935E2D9306841D7005AEC75 /* LumaShade */,
+				2935E2F4306841D9005AEC75 /* LumaShade Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2935E2D8306841D7005AEC75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+				2935E2E4306841D7005AEC75 /* Icon.png in Resources */,
+				2935E2ED306841D7005AEC75 /* Main.storyboard in Resources */,
+				2935E2E8306841D7005AEC75 /* Script.js in Resources */,
+				2935E2E2306841D7005AEC75 /* Main.html in Resources */,
+				2935E2EF306841D8005AEC75 /* Assets.xcassets in Resources */,
+				2935E2E6306841D7005AEC75 /* Style.css in Resources */,
+			);
+		};
+		2935E2F3306841D9005AEC75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+				2935E310306841D9005AEC75 /* colors.js in Resources */,
+				2935E311306841D9005AEC75 /* icons in Resources */,
+				2935E313306841D9005AEC75 /* popup.css in Resources */,
+				2935E312306841D9005AEC75 /* manifest.json in Resources */,
+				2935E30E306841D9005AEC75 /* popup.js in Resources */,
+				2935E314306841D9005AEC75 /* content.js in Resources */,
+				2935E30F306841D9005AEC75 /* popup.html in Resources */,
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2935E2D6306841D7005AEC75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+				2935E2EA306841D7005AEC75 /* ViewController.swift in Sources */,
+				2935E2DE306841D7005AEC75 /* AppDelegate.swift in Sources */,
+			);
+		};
+		2935E2F1306841D9005AEC75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+				2935E2FB306841D9005AEC75 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2935E2F8306841D9005AEC75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2935E2F4306841D9005AEC75 /* LumaShade Extension */;
+			targetProxy = 2935E2F7306841D9005AEC75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2935E2E0306841D7005AEC75 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2935E2E1306841D7005AEC75 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		2935E2EB306841D7005AEC75 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2935E2EC306841D7005AEC75 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2935E2FD306841D9005AEC75 /* Debug configuration for PBXProject "LumaShade" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2935E2FE306841D9005AEC75 /* Release configuration for PBXProject "LumaShade" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		2935E300306841D9005AEC75 /* Debug configuration for PBXNativeTarget "LumaShade Extension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LumaShade Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "LumaShade Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.halilozel.lumashade.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2935E301306841D9005AEC75 /* Release configuration for PBXNativeTarget "LumaShade Extension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LumaShade Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "LumaShade Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.halilozel.lumashade.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2935E304306841D9005AEC75 /* Debug configuration for PBXNativeTarget "LumaShade" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LumaShade/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LumaShade;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSViewGestureRecognizerIsExclusive = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.halilozel.lumashade;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2935E305306841D9005AEC75 /* Release configuration for PBXNativeTarget "LumaShade" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LumaShade/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LumaShade;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSViewGestureRecognizerIsExclusive = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.halilozel.lumashade;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2935E2D5306841D7005AEC75 /* Build configuration list for PBXProject "LumaShade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2935E2FD306841D9005AEC75 /* Debug configuration for PBXProject "LumaShade" */,
+				2935E2FE306841D9005AEC75 /* Release configuration for PBXProject "LumaShade" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		2935E2FF306841D9005AEC75 /* Build configuration list for PBXNativeTarget "LumaShade Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2935E300306841D9005AEC75 /* Debug configuration for PBXNativeTarget "LumaShade Extension" */,
+				2935E301306841D9005AEC75 /* Release configuration for PBXNativeTarget "LumaShade Extension" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		2935E303306841D9005AEC75 /* Build configuration list for PBXNativeTarget "LumaShade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2935E304306841D9005AEC75 /* Debug configuration for PBXNativeTarget "LumaShade" */,
+				2935E305306841D9005AEC75 /* Release configuration for PBXNativeTarget "LumaShade" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2935E2D2306841D7005AEC75 /* Project object */;
+	validationLevel = 1;
+}
