@@ -18,6 +18,8 @@ The screenshots show the same [sample page](Tests/sample.html) before and after 
 - Adapt content added after a page loads.
 - Keep single-color SVG wordmarks and icons readable without recoloring multicolor artwork.
 - Make search and form placeholders legible on dark surfaces.
+- Keep small colored activity markers visible instead of darkening them as page backgrounds.
+- Cover the first paint with a dark surface while a refreshed page is being converted.
 - Preserve the original colors of photos and videos.
 - No account, server, ads, or tracking. Preferences stay in the browser's local storage.
 
@@ -35,7 +37,7 @@ Safari's internal pages and pages that do not allow extensions remain unchanged.
 
 The extension source is in [`Extension/`](Extension/). The Xcode project references these files directly, so there is no second copy to keep in sync.
 
-The [contrast regression page](Tests/regression.html) checks a dark wordmark, a search placeholder, multicolor artwork, and unchanged element geometry. Its [rendered preview](Screenshots/contrast-regression.png) is a test fixture, not a screenshot of Medium.
+The [contrast regression page](Tests/regression.html) checks a dark wordmark, a search placeholder, multicolor artwork, a small activity marker, and unchanged element geometry. Its [rendered preview](Screenshots/contrast-regression.png) is a test fixture, not a screenshot of Medium. The [first-paint fixture](Tests/loading.html) checks that a bright page is covered during the initial conversion.
 
 ```sh
 node --test Tests/colors.test.js
