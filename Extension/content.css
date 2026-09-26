@@ -1,0 +1,5 @@
+:root[data-lumashade-active] input::placeholder,
+:root[data-lumashade-active] textarea::placeholder {
+  color: #b2bac9 !important;
+  opacity: 1 !important;
+}

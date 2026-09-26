@@ -24,6 +24,7 @@
 		2935E312306841D9005AEC75 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 2935E30B306841D9005AEC75 /* manifest.json */; };
 		2935E313306841D9005AEC75 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 2935E30C306841D9005AEC75 /* popup.css */; };
 		2935E314306841D9005AEC75 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 2935E30D306841D9005AEC75 /* content.js */; };
+		2935E316306841D9005AEC75 /* content.css in Resources */ = {isa = PBXBuildFile; fileRef = 2935E315306841D9005AEC75 /* content.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		2935E30B306841D9005AEC75 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../Extension/manifest.json; sourceTree = "<group>"; };
 		2935E30C306841D9005AEC75 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = popup.css; path = ../../Extension/popup.css; sourceTree = "<group>"; };
 		2935E30D306841D9005AEC75 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = content.js; path = ../../Extension/content.js; sourceTree = "<group>"; };
+		2935E315306841D9005AEC75 /* content.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = content.css; path = ../../Extension/content.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				2935E30B306841D9005AEC75 /* manifest.json */,
 				2935E30C306841D9005AEC75 /* popup.css */,
 				2935E30D306841D9005AEC75 /* content.js */,
+				2935E315306841D9005AEC75 /* content.css */,
 			);
 			name = Resources;
 			path = "LumaShade Extension";
@@ -248,6 +251,7 @@
 				2935E312306841D9005AEC75 /* manifest.json in Resources */,
 				2935E30E306841D9005AEC75 /* popup.js in Resources */,
 				2935E314306841D9005AEC75 /* content.js in Resources */,
+				2935E316306841D9005AEC75 /* content.css in Resources */,
 				2935E30F306841D9005AEC75 /* popup.html in Resources */,
 			);
 		};

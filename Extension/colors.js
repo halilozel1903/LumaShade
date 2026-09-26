@@ -21,7 +21,7 @@
   function darkBackground(c) {
     const mean = (c.r + c.g + c.b) / 3;
     const base = 20 + (1 - luminance(c)) * 32;
-    return { r: Math.max(12, base + (c.r - mean) * .08), g: Math.max(12, base + (c.g - mean) * .08), b: Math.max(12, base + 5 + (c.b - mean) * .08), a: 1 };
+    return { r: Math.max(12, base + (c.r - mean) * .08), g: Math.max(12, base + 5 + (c.g - mean) * .08), b: Math.max(12, base + 14 + (c.b - mean) * .08), a: 1 };
   }
   function readableForeground(c, background) {
     const spread = Math.max(c.r, c.g, c.b) - Math.min(c.r, c.g, c.b);
@@ -35,7 +35,14 @@
     }
     return white;
   }
-  const api = { parse, css, blend, luminance, contrast, darkBackground, readableForeground };
+  function isSingleColor(colors) {
+    if (!colors.length) return false;
+    const first = colors[0];
+    return colors.every(color => Math.max(
+      Math.abs(color.r - first.r), Math.abs(color.g - first.g), Math.abs(color.b - first.b)
+    ) <= 36);
+  }
+  const api = { parse, css, blend, luminance, contrast, darkBackground, readableForeground, isSingleColor };
   scope.LumaColors = api;
   if (typeof module !== "undefined") module.exports = api;
 })(typeof globalThis !== "undefined" ? globalThis : this);

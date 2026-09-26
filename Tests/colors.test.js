@@ -14,6 +14,7 @@ test('maps common light surfaces to distinct dark surfaces', () => {
   assert.ok(C.luminance(white) < .04);
   assert.ok(C.luminance(card) < .05);
   assert.ok(C.luminance(card) > C.luminance(white));
+  assert.equal(C.css(white), 'rgb(20, 25, 34)');
 });
 
 test('normal text and colored links meet WCAG AA contrast', () => {
@@ -24,4 +25,10 @@ test('normal text and colored links meet WCAG AA contrast', () => {
     const readable = C.readableForeground(C.parse(fg), dark);
     assert.ok(C.contrast(readable, dark) >= 4.5, `${fg} on ${bg}`);
   }
+});
+
+test('only single-color vectors are eligible for recoloring', () => {
+  assert.equal(C.isSingleColor([C.parse('rgb(20, 20, 20)'), C.parse('rgb(31, 31, 31)')]), true);
+  assert.equal(C.isSingleColor([C.parse('rgb(20, 20, 20)'), C.parse('rgb(50, 140, 240)')]), false);
+  assert.equal(C.isSingleColor([]), false);
 });

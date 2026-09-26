@@ -3,7 +3,7 @@
   const api = typeof browser !== "undefined" ? browser : chrome;
   const C = globalThis.LumaColors;
   const BASE = { r: 20, g: 25, b: 34, a: 1 };
-  const excluded = new Set(["SCRIPT", "STYLE", "LINK", "META", "SVG", "PATH", "CANVAS", "VIDEO", "IMG", "PICTURE", "SOURCE", "IFRAME", "NOSCRIPT"]);
+  const excluded = new Set(["SCRIPT", "STYLE", "LINK", "META", "CANVAS", "VIDEO", "IMG", "PICTURE", "SOURCE", "IFRAME", "NOSCRIPT"]);
   const painted = new Map();
   let active = false;
   let settings = { enabled: true, sites: {} };
@@ -42,7 +42,39 @@
     const text = C.parse(getComputedStyle(document.body || document.documentElement).color);
     return C.luminance(root) < .16 && (!text || C.contrast(text, root) >= 4.5);
   }
+  function paintVector(svg) {
+    const box = svg.getBoundingClientRect();
+    if (!box.width || !box.height || box.width > 440 || box.height > 140 || box.width * box.height > 40000) return;
+    if (svg.querySelector("image, foreignObject, linearGradient, radialGradient, pattern, filter")) return;
+    const shapes = svg.querySelectorAll("path, rect, circle, ellipse, line, polyline, polygon, text, tspan, use");
+    if (!shapes.length || shapes.length > 120) return;
+    const entries = [];
+    for (const shape of shapes) {
+      const style = getComputedStyle(shape);
+      if (style.visibility === "hidden" || style.display === "none") continue;
+      for (const property of ["fill", "stroke"]) {
+        if (property === "fill" && (shape.tagName.toLowerCase() === "line" || shape.tagName.toLowerCase() === "polyline")) continue;
+        const value = style.getPropertyValue(property);
+        if (value === "none" || value === "transparent") continue;
+        const color = C.parse(value);
+        if (!color) return;
+        if (color.a > .01) entries.push({ shape, property, color });
+      }
+    }
+    if (!C.isSingleColor(entries.map(entry => entry.color))) return;
+    const background = effectiveBackground(svg.parentElement);
+    for (const { shape, property, color } of entries) {
+      const visible = color.a < 1 ? C.blend(color, background) : color;
+      if (C.contrast(visible, background) < 4.5) {
+        set(shape, property, C.css(C.readableForeground(visible, background)));
+      }
+    }
+  }
   function paint(element) {
+    if (element instanceof SVGElement) {
+      if (element.tagName.toLowerCase() === "svg" && !element.closest("[data-lumashade-ignore]")) paintVector(element);
+      return;
+    }
     if (excluded.has(element.tagName) || element.closest("[data-lumashade-ignore]")) return;
     const computed = getComputedStyle(element);
     if (computed.display === "none" || computed.visibility === "hidden") return;
@@ -100,13 +132,14 @@
     const shouldEnable = settings.enabled !== false && siteEnabled() && !siteIsDark;
     if (shouldEnable && !active) {
       active = true;
-      set(document.documentElement, "color-scheme", "dark");
+      document.documentElement.setAttribute("data-lumashade-active", "");
       schedule(document.documentElement);
     } else if (!shouldEnable && active) {
       active = false;
       if (observer) observer.disconnect();
       pending.clear();
       restore();
+      document.documentElement.removeAttribute("data-lumashade-active");
     }
   }
   api.storage.local.get({ enabled: true, sites: {} }).then(value => {
