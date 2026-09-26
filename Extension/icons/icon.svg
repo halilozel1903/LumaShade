@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="LumaShade crescent logo">
+  <defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#273b61"/><stop offset="1" stop-color="#161d32"/></linearGradient></defs>
+  <rect width="128" height="128" rx="29" fill="url(#g)"/>
+  <circle cx="65" cy="64" r="36" fill="#d7d4ff"/>
+  <circle cx="83" cy="49" r="32" fill="#1a2540"/>
+  <path d="M31 89h52" stroke="#8c85f7" stroke-linecap="round" stroke-width="7"/>
+  <path d="M96 72v12M90 78h12" stroke="#a69fff" stroke-linecap="round" stroke-width="4"/>
+</svg>
