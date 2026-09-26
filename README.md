@@ -1,41 +1,41 @@
 # LumaShade
 
-Safari için sakin, okunabilir bir koyu mod eklentisi. Açık renkli sayfaları koyulaştırır; yazı ve bağlantıları arka planla yeterli kontrasta taşır. Fotoğraf, video, canvas ve gömülü içerikleri yeniden renklendirmez. Zaten koyu görünen sayfalarda otomatik olarak devre dışı kalır.
+A calm, readable dark mode for Safari. LumaShade darkens bright websites and adjusts text and links for contrast. It leaves photos, videos, canvas, and embedded content untouched, and steps aside when a website already has a dark theme.
 
-![LumaShade örnek görünüm](Screenshots/after.png)
+![LumaShade preview](Screenshots/after.png)
 
-| Önce | Sonra |
+| Before | After |
 | --- | --- |
-| ![Açık örnek sayfa](Screenshots/before.png) | ![LumaShade uygulanmış örnek sayfa](Screenshots/after.png) |
+| ![Bright sample page](Screenshots/before.png) | ![Sample page with LumaShade](Screenshots/after.png) |
 
-Ekran görüntüleri, depodaki [örnek sayfanın](Tests/sample.html) aynı tarayıcı penceresinde önce ve sonra render edilmesiyle alındı.
+The screenshots show the same [sample page](Tests/sample.html) before and after applying LumaShade in a browser preview.
 
-## Özellikler
+## Features
 
-- Site genelinde açma ve kapatma; alan adı bazında istisna.
-- Açık zeminleri ve üzerindeki metni birlikte dönüştürme. Normal boyutlu metin için hedef kontrast **en az 4,5:1**.
-- Var olan koyu temayı algılayıp sayfaya müdahale etmeme.
-- Sonradan yüklenen sayfa öğelerine de uygulama.
-- Görsel ve videoların renklerini koruma.
-- Hesap, sunucu, reklam ve izleme kodu yok. Tercihler yalnızca tarayıcının yerel depolamasında tutulur.
+- Turn dark mode on or off globally, with a separate switch for each website.
+- Transform bright surfaces and their text together. The target contrast for normal text is **at least 4.5:1**.
+- Detect existing dark themes and leave them alone.
+- Adapt content added after a page loads.
+- Preserve the original colors of photos and videos.
+- No account, server, ads, or tracking. Preferences stay in the browser's local storage.
 
-## Safari'de kurulum
+## Install in Safari
 
-1. [LumaShade.xcodeproj](LumaShade/LumaShade.xcodeproj) dosyasını Xcode ile açın.
-2. `LumaShade` ve `LumaShade Extension` hedeflerinin **Signing & Capabilities** bölümünde kendi Apple geliştirme takımınızı seçin.
-3. Şema olarak `LumaShade`, hedef olarak `My Mac` seçip **Run**'a basın.
-4. Açılan uygulamada **Safari Eklenti Ayarlarını Aç** düğmesini kullanın. Safari'nin **Ayarlar → Eklentiler** bölümünde LumaShade'i etkinleştirin ve web siteleri için izin verin.
-5. Değişiklik görmek istediğiniz açık sekmeleri yenileyin. Araç çubuğundaki LumaShade simgesinden genel ve site bazlı anahtarları yönetin.
+1. Open [LumaShade.xcodeproj](LumaShade/LumaShade.xcodeproj) in Xcode.
+2. Select your Apple development team under **Signing & Capabilities** for both the `LumaShade` and `LumaShade Extension` targets.
+3. Select the `LumaShade` scheme and `My Mac` destination, then click **Run**.
+4. In the app, click **Open Safari Extension Settings**. Enable LumaShade under **Safari Settings → Extensions** and allow access to websites.
+5. Refresh any open tabs you want to darken. Use the LumaShade toolbar icon to manage the global and per-site switches.
 
-Safari'nin kendi iç sayfalarında ve eklenti çalıştırmaya izin vermeyen sayfalarda görünüm değişmez. Çok özel çizim yapan sitelerde alan adı anahtarından eklentiyi kapatabilirsiniz.
+Safari's internal pages and pages that do not allow extensions remain unchanged. If a particular website renders unusually, turn LumaShade off for that site.
 
-## Geliştirme
+## Development
 
-Eklenti kaynakları [`Extension/`](Extension/) içindedir. Xcode projesi bu dosyaları doğrudan kullanır; ikinci bir kopya tutulmaz.
+The extension source is in [`Extension/`](Extension/). The Xcode project references these files directly, so there is no second copy to keep in sync.
 
 ```sh
 node --test Tests/colors.test.js
 xcodebuild -project LumaShade/LumaShade.xcodeproj -scheme LumaShade -configuration Debug -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
 ```
 
-Ekran görüntüleri bir örnek sayfa üzerinde alınmıştır; gerçek sitelerin tasarımı farklılık gösterebilir. Kaynak kodu [MIT lisansı](LICENSE) ile sunulur.
+The screenshots use a sample page; results on individual websites may vary. Released under the [MIT license](LICENSE).
