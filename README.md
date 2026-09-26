@@ -16,6 +16,8 @@ The screenshots show the same [sample page](Tests/sample.html) before and after 
 - Transform bright surfaces and their text together. The target contrast for normal text is **at least 4.5:1**.
 - Detect existing dark themes and leave them alone.
 - Adapt content added after a page loads.
+- Keep single-color SVG wordmarks and icons readable without recoloring multicolor artwork.
+- Make search and form placeholders legible on dark surfaces.
 - Preserve the original colors of photos and videos.
 - No account, server, ads, or tracking. Preferences stay in the browser's local storage.
 
@@ -32,6 +34,8 @@ Safari's internal pages and pages that do not allow extensions remain unchanged.
 ## Development
 
 The extension source is in [`Extension/`](Extension/). The Xcode project references these files directly, so there is no second copy to keep in sync.
+
+The [contrast regression page](Tests/regression.html) checks a dark wordmark, a search placeholder, multicolor artwork, and unchanged element geometry. Its [rendered preview](Screenshots/contrast-regression.png) is a test fixture, not a screenshot of Medium.
 
 ```sh
 node --test Tests/colors.test.js
